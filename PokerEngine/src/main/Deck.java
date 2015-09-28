@@ -2,6 +2,7 @@ package main;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Deck {
 	public static void main(String[] args) {
@@ -14,29 +15,35 @@ public class Deck {
 	*/	
 	
 	
-	Integer[] deck1 = new Integer [52];
+//	Integer[] deck1 = new Integer [52];
 	
-    ArrayList<Integer> deck = new ArrayList<>(Arrays.asList(deck1));
+   ArrayList<Card> Makingdeck = new ArrayList<Card>();
+    		
+   //ArrayList<Integer>deck =	ArrayList<>(Arrays.asList(deck1));
 
+	private void ShuffleCards() {
+       Collections.shuffle(cards);
+       }
+    
+cards = Makingdeck;
+ShuffleCards();
+	}
+	// the method draw
+public Card drawFromDeck(){
+	Card FirstCard = cards.get(0);
+	cards.remove(FirstCard);
+	return FirstCard;
 	
-    java.util.Collections.shuffle(deck);
-
-	 
-	//the method draw
+	public int getTotalCards(){
+		return cards.size();
+	}
 	
-	Card c = card();
-	c = Deck.get(0);
-	Deck.remove(0);
-	return c;
-	
-	
-	
-	
-	
-	
-	
+	public ArrayList<Card> getCards()
+	{
+		return this.cards;
+	}
 	
 	
 	}
-}
 
+}}
